@@ -1,0 +1,135 @@
+body{
+    width: 90%;
+    text-align: left;
+    background-color: #e1e1e1;
+}
+
+h1{
+    text-align: center;
+    min-width: 100%;
+    font-weight: bold;
+    font-style: italic;
+    font: 500;
+    color: rgb(123, 134, 217);
+
+}
+
+section h2{
+    color: rgb(123, 134, 217);
+}
+
+span{
+    color: rgb(123, 134, 217);
+}
+
+#libelle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+img{
+    width: 70%;
+    height: 80%;
+}
+
+.mur{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-left: 2em;
+}
+#dimMur, #calSup, #mesureBloc{
+    width: 33%;
+}
+#dimMur{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#dimMur label{
+    padding-top: 0.5em;
+}
+#mesureBloc input{
+    margin-top: 0.5em;
+}
+#calSup{
+    text-align: right;
+    margin-top: 0.5em;
+}
+#clear{
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(150, 158, 215);
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+#brique{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#choix{
+    width: 10em;
+}
+
+#ImCal{
+    width: 33%;
+}
+
+img{
+    transform: rotate(-70deg);
+}
+
+
+#materielRequis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.libelleRes p{
+    margin-bottom: 0;
+    margin-left: -1.8em;
+}
+
+.libelleRes #sousTitre{
+    font-size: small;
+    margin: 0;
+    margin-left: -1.9em;
+}
+
+#res{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#masse, #ou{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+#ou p{
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+#masse span{
+    margin-top: 1em;
+}
+
+#sacs25{
+    margin-top: -1em;
+    margin-bottom: -0.8em;
+}
+
+.materielRequis{
+    margin-bottom: 2em;
+}

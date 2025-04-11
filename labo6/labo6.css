@@ -1,0 +1,46 @@
+body{
+    background-color: bisque;
+}
+#libelle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    background-color: antiquewhite;
+}
+
+li{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    list-style: none;
+    font-style: italic;
+    font-weight: lighter;
+    background-color: antiquewhite;
+}
+span{
+    font-weight: bold;
+}
+
+#credit{
+    padding: 0 9em;
+}
+
+button{
+    padding: 1em;
+    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+input{
+    display: block;
+    margin-right: 10%;
+    float: right;
+}
+.UE{
+    min-width: 450px;
+    display: inline-block;
+}

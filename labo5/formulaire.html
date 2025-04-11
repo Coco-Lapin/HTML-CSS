@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul puissance caloriphique</title>
+
+    <link rel="stylesheet" href="./formStyle.css">
+    <script src="./formJavascript.js" defer></script>
+
+</head>
+<body>
+    <section id="formulaire">
+        <header>
+            <h1>Calcul de la puissance d'un radiateur destiné à une pièce d'habitation</h1>
+        </header>
+
+        <section id="volume">
+            <form>
+                <fieldset>
+                    <legend>Encodage : L * l * h -- Veuillez utiliser le point comme séparateur décimal</legend>
+                    <br>
+                        <label for="dimensionL" id="long">Longueur</label>
+                        <input type="number" name="dimensionL" id="longueur" min="0" step="0.5">
+                    <br>
+                        <label for="dimensionl" id="larg">Largeur</label>
+                        <input type="number" name="dimensionl" id="largeur" min="0" step="0.5">
+                    <br>
+                        <label for="dimensionH" id="haut">Hauteur</label>
+                        <input type="number" name="dimensionH" id="hauteur" min="0" step="0.5" >
+                    <br>
+                </fieldset>
+            </form>
+        </section>
+        <section id="info">
+            <form>
+                <fieldset>
+                    <legend>Informations supplémentaires</legend>
+                    <br>
+                    <section class="tempIso">
+                        <select name="temperature" id="temp">
+                            <option value="1">18°C</option>
+                            <option value="2">20°C</option>
+                            <option value="3">22°C</option>
+                        </select>
+                        
+                        <input type="checkbox" name="isolation" id="plafondIso">
+                        <label for="isolation">Plafond isolé</label>
+                    </section>
+                        <section id="infoSupp">
+                    <br>
+                        <label for="mursExte">Murs en contact avec l'exterieur</label>
+                    <br>
+
+
+                        <input type="range" id="mursExte" min="0" max="5" oninput="updateValueExte(this.value)">
+                        <span id="rangeMursExte">3</span>
+                    <br>
+                        <label for="nonIsole">Nombre de fenêtre/portes non isolées dans la pièce</label>
+                    <br>
+                        <input type="range" id="nonIsole" min="0" max="8" oninput="updateValueNIsole(this.value)">
+                        <span id="rangeNonIsole">4</span>
+                    <br>
+                        <label for="Isole">Nombre de fenêtre/portes isolées dans la pièce</label>
+                    <br>
+                        <input type="range" id="Isole" min="0" max="10" oninput="updateValueIsole(this.value)">
+                        <span id="rangeIsole">5</span>
+                    <br>
+
+
+
+
+                    <input type="button" value="Calculer la puissance" id="calculP" onclick="calculer()">
+                </fieldset>
+            </form>
+        </section>
+
+        <footer id="affichage">
+            <p>La puissance nécessaire est égale à : <span id="valueRes"></span>watt(s)</p>
+        </footer>
+        
+    </section>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction d'un mur</title>
+
+    <link rel="stylesheet" href="./labo7.css">
+    <script src="./labo7.js"></script>
+</head>
+<body>
+    <h1>Construction d'un mur de brique</h1>
+
+    <!-- section permettant de déterminer les dimensions du mur -->
+    <section id="dimensionMur">
+        <h2>Précisez les dimensions du mur</h2>
+        
+        <form class="mur">
+            <div id="dimMur">
+                <label>Longueur du mur : </label>
+                <label>Hauteur du mur : </label>
+            </div>
+            <div id="mesureBloc" >
+                <input type="number" min="0" step="0.1" value="0.0" id="longMur" onchange="dimMur()"><label> cm</label>
+                <input type="number" min="0" step="0.1" value="0.0" id="largMur" onchange="dimMur()"><label> cm</label>
+            </div>
+            <div id="calSup">
+                <label>Superficie calculée : <span id="superficie">0.0</span><span> m²</span> </label>
+
+                <input id="clear" type="reset" value="Vider les champs">
+            </div>
+        </form>
+    </section>
+
+    <!-- section permettant de déterminer les dimensions des briques -->
+    <section id="dimensionBrique">
+        <h2>Selectionnez les dimensions de la brique ou du bloc</h2>
+        <div class="dimBloc">
+            <form id="brique">
+
+                <div id="libelle">
+                    <label>Type de brique : </label>
+                    <p>Longueur : </p>
+                    <p>Largeur : </p>
+                    <p>Hauteur : </p>
+                </div>
+
+                <div id="res">
+ 
+                    <select list="options" id="choix" name="choix" onchange="valBrique(this.value)">
+
+                        <optgroup label="Blocs en béton">
+                            <option value="39x9x19" label="39x9x19">
+                            <option value="39x14x19" label="39x14x19">
+
+                            <!-- autre exemple -->
+
+                            <option>39x19x19</option>
+                        </optgroup>
+
+                        <optgroup label="Brique rapide">
+                            <option value="29x9x14" label="29x9x14">
+                            <option value="29x14x14" label="29x14x14">
+                        </optgroup>
+
+                        <optgroup label="Brique Boeren">
+                            <option value="18x8.5x16.5" label="18x8.5x16.5">
+                        </optgroup>
+
+                        <optgroup label="Brique Rhin">
+                            <option value="18x8.5x5" label="18x8.5x5">
+                        </optgroup>
+
+                    </select>
+
+                    <p><span id="long">0</span> cm</p>
+                    <p><span id="larg">0</span> cm</p>
+                    <p><span id="haut">0</span> cm</p>
+
+                </div>
+
+                <div id="ImCal">
+                    <img src="./fairebel-lait.png" alt="schématisation d'une brique">
+                    <p>Superficie de la face : (longeur x largeur) <span id="face">0.00 m²</span></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- section permettant de calculer le materiel requis pour construire le mur -->
+    <section class="materielRequis">
+        <h2>Materiel Requis</h2>
+        <div id="materielRequis">
+
+            <div class="libelleRes">
+                <p>Quantité de briques : </p>
+                <p id="sousTitre">Y compris 2% de chutes</p>
+                <p>Quantité de mortier : </p>
+                <p id="sousTitre">Y compris 10% de chutes </p>
+                <p>Sable du Rhin </p>
+                <p>Ciment </p>
+            </div>
+            
+            <div id="masse">
+                <span id="kgSable">0 kg </span>
+                <span id="kgCiment">0 kg </span>
+            </div>
+
+            <div id="ou">
+                <p> ou </p>
+                <p> ou </p>
+            </div>
+
+            <div id="res">
+                <span id="qteBrique"> 0 </span>
+                <span id="qteMortier"> 0. litres</span>
+                <span id="sacs40"> 0 sacs de 40 kg </span>
+                <span id="sacs25"> 0 sacs de 25 kg</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

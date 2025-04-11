@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <head>
+        <!-- <link type="text/css" rel="stylesheet" href="labo6.css"/> -->
+        <script src="labo6HTML_only.js"></script>
+    </head>
+    <h1>Bloc 1 </h1>
+    <form>
+        <input type="button" value="Remplir points aléatoires" onclick="remplir_AA()">
+        <table>
+            <!--
+Toute la structure du fichier HTML est conçue pour pouvoir utiliser les mêmes instructions "onchange" qui pourront donc être stockées dans une même fonction.  
+Chaque UE possède name="UE" ; Donc on a automatiquement un array UE avec autant d'élément qu'il y a d'UE
+Chaque AA d'une même UE possède un name=IG[n°UE] (par exemple IG102).  On a donc aussi des array d'AA (un array d'AA par UE) sauf si une seule AA dans l'UE.
+Chaque AA contient les paramètres data-ects (nbre de crédits) et data-index-UE (pour savoir la moyenne de quelle UE modifier)
+Les class "creditUE" et "creditAA" ne sont utilisés que pour le css
+La class "points" présente dans les <input> des AA est utilisée pour remplir les points aléatoirement. Pratique pour tester l'application
+
+-->
+            <tr>
+                <th>Code</th>
+                <th>Intitulé</th>
+                <th>Crédits</th>
+                <th>Points/20</th>
+            </tr>
+            <tr class="UE">
+                <td>UE IG102</td>
+                <td>Langues étrangères 1</td>
+                <td class="creditUE">4</td>
+                <td><input type="text" name="UE" data-ects="4" disabled /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>Langues étrangères 1</td>
+                <td class="creditAA">4</td>
+                <td> <input class="points" type="number" min="0" max="20" step="0.1" name="IG102" data-ects="4"
+                        data-index-UE="0" onchange="change_points(UE,this)" />
+                </td>
+            </tr>
+
+            <tr class="UE">
+                <td>UE IG103</td>
+                <td>Principes et langages de programmation 1</td>
+                <td class="creditUE">11</td>
+                <td><input type="text" name="UE" data-ects="11" disabled /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>Méthodes et principes de programmation 1</td>
+                <td class="creditAA">6</td>
+                <td><input class="points" type="number" min="0" max="20" step="0.1" name="IG103" data-ects="6"
+                        data-index-UE="1" onchange="change_points(UE,this)" /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>Langage de programmation procédural 1</td>
+                <td class="creditAA">5</td>
+                <td><input class="points" type="number" min="0" max="20" step="0.1" name="IG103" data-ects="5"
+                        data-index-UE="1" onchange="change_points(UE,this)" /></td>
+            </tr>
+
+            <tr class="UE">
+                <td>UE IG104</td>
+                <td>Architecture et systèmes</td>
+                <td class="creditUE">5</td>
+                <td><input type="text" name="UE" data-ects="5" disabled /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>Architecture technique et matériel informatique</td>
+                <td class="creditAA">5</td>
+                <td><input class="points" type="number" min="0" max="20" step="0.1" name="IG104" data-ects="5"
+                        data-index-UE="2" onchange="change_points(UE,this)" /></td>
+            </tr>
+
+            <tr class='UE'>
+                <td>UE IG105</td>
+                <td>Développement 1</td>
+                <td class="creditUE">4</td>
+                <td><input type='text' data-ects="4" name='UE' disabled /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>· Principe de programmation orientée objet</td>
+                <td class="creditAA">2</td>
+                <td><input class="points" type="number" min="0" max="20" step="0.1" name="IG105" data-ects="2"
+                        data-index-UE="3" onchange="change_points(UE,this)" /></td>
+            </tr>
+            <tr class="AA">
+                <td>.</td>
+                <td>· Programmation orientée objet 1</td>
+                <td class="creditAA">2</td>
+                <td><input class="points" type="number" min="0" max="20" step="0.1" name="IG105" data-ects="2"
+                        data-index-UE="3" onchange="change_points(UE,this)" /></td>
+            </tr>
+
+
+            <div>
+                <tr class="UE">
+                    <td>BLOC1</td>
+                    <td><input type="button" value="Calculer Total"
+                            onclick="retour=calcul_total(document.getElementsByName('UE')); Total_credit.value =retour[2]+ '/' + retour[3];Total_sur.value=retour[0]+'/'+retour[1] + '     '+ (retour[0]*100/retour[1]).toFixed(1)+' %'" />
+                    </td>
+                    <td class="creditUE"><input type="text" name="Total_credit" value="A calculer" disabled /></td>
+                    <td><input type="text" name="Total_sur" value="A calculer" disabled /></td>
+                </tr>
+            </div>
+        </table>
+    </form>
+
+</body>
+
+</html>
